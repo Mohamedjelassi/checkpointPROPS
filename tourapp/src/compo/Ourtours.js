@@ -3,13 +3,9 @@ import { Link } from "react-router-dom";
 
 import "../App.css";
 
-const Ourtours = ({ Ourtour: { name, info, image, price } }) => {
+const Ourtours = ({ Ourtour: { id, name, info, image, price },Delete }) => {
   const [text, setText] = useState("");
 
-  function Delete() {
-    var myobj = document.getElementById("demo");
-    myobj.remove();
-  }
 
 
 
@@ -34,7 +30,7 @@ const Ourtours = ({ Ourtour: { name, info, image, price } }) => {
           <button> Read more </button>  
           </Link>
           <br></br> <br></br>
-          <button onClick={Delete} > Delete Tour </button> 
+          <button onClick={()=>Delete(id)} > Delete Tour </button> 
           <br></br> <br></br>
           <button onClick={adddesc}> info </button>  
           <p className="p"> {text} </p>

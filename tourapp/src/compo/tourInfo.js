@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
 
 function TourInfo(props) {
   const tourFound = props.Otours.find(
     (Ourtour) =>
-      Ourtour.name.split(" ").join("") ==
+      Ourtour.name.split(" ").join("") ===
       props.match.params.name.split(" ").join("")
   );
 

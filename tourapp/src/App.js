@@ -16,6 +16,14 @@ function App() {
     // e.preventDefault();
     setOtours([...Otours, NewTour]);
   };
+  let toursLength = (tab)=> {
+    return tab.length;
+  };
+
+  const Delete = (id) => {
+    setOtours(Otours.filter((el) => el.id !== id))};
+
+  console.log(toursLength(Otours))
 
   return (
     <BrowserRouter>
@@ -49,7 +57,12 @@ function App() {
           path="/Ourtours"
           render={() => (
             <>
-              <OurtoursFilter Otours={Otours} nameSearch={nameSearch} />
+              <OurtoursFilter 
+              Otours={Otours}
+               nameSearch={nameSearch}
+               toursLength={toursLength}
+               Delete={Delete}
+               />
             </>
           )}
           target="_blank"
@@ -62,6 +75,6 @@ function App() {
       </div>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
